@@ -10,6 +10,8 @@ class Solution
   end
 
   def permutation(string)
+    # I cheated here :P
+    # Almost all languages have it as builtin
     string.chars.permutation.to_a.map(&:join)
   end
 end
