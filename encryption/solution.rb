@@ -1,11 +1,15 @@
-class Encrypter
-  attr_accessor :string
+# https://www.hackerrank.com/challenges/encryption?h_r=internal-search
+#
+# An English text needs to be encrypted using the following encryption scheme.
+# First, the spaces are removed from the text. Let L be the length of this text.
+# Then, characters are written into a grid, whose rows and columns have the following constraints:
 
-  def initialize(string)
-    @string = string
-  end
+# √ L < rows < cols, where x is floor function and x is ceil function
+# For example, the sentence `if man was meant to stay on the ground god would have given us roots`
+# after removing spaces is  characters long, 54 so it is written in the form of a grid with 7 rows and 8 columns.
 
-  def encrypt
+class Solution
+  def answer(string)
     return "" unless string.size > 0
 
     sanitized = remove_whitespaces(string)
@@ -35,5 +39,5 @@ end
 
 if __FILE__ == $0
   string = gets.strip
-  puts Encrypter.new(string).encrypt
+  puts Solution.new.answer(string)
 end
